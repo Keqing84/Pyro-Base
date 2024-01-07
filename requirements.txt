@@ -2,3 +2,4 @@ uvloop
 pyrogram
 Tgcrypto
 python-dotenv
+pymongo
