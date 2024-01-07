@@ -22,7 +22,7 @@ basicConfig(
     level=INFO,
 )
 
-LOGGER = getLogger(__name__)
+LOG = getLogger(__name__)
 
 admins = list(Config.admins)
 prefix = ["/","!","#","-","?"]
