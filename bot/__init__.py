@@ -31,6 +31,6 @@ app = Client("Pyro-Base",
         api_id=Config.api_id,
         api_hash=Config.api_hash,
         bot_token=Config.bot_token,
-        workdir="./",
-        plugins=dict(root="Pyro-Base/plugins")
+        workdir=os.path.dirname(__file__),
+        plugins=dict(root=os.path.join(os.path.dirname(__file__),"plugins"))
      )
