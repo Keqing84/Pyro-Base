@@ -21,5 +21,6 @@ class Config:
   api_id = int(get_env("API_ID"))
   api_hash = get_env("API_HASH")
   bot_token = get_env("BOT_TOKEN")
+  db_url = get_env("DATABASE")
   channel_id = int(get_env("CHANNEL"))
   admins = admin_panel()
