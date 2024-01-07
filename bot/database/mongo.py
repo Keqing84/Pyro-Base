@@ -1,4 +1,4 @@
-from bot import LOG
+from bot import LOG, db_uri
 
 import pymongo
 
@@ -19,7 +19,6 @@ _id || Auto Generate By Mongo, So Set The Tg Id In It
 
 class MongoPy:
     def __init__(self, uri, bot="KAI84"):
-        self._ldbcge_ = uri
         self.client = pymongo.mongo_client.MongoClient(uri)
         self.mdb = self.client[bot]
         self.coll = self.mdb[bot]
@@ -85,5 +84,5 @@ class MongoPy:
     # Restarts The DB Connection **(Experimental)**
     def restart(self):
         self.client.close()
-        return MongoPy(self._ldbcge_)
+        return MongoPy(db_uri)
         
