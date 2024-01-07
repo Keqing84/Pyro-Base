@@ -9,6 +9,7 @@ from logging import (
 )
 from pyrogram import Client
 from bot.config import Config
+from bot.database.mongo import MongoPy
 
 uvloop.install() # Pyrogram Speed Up
 
@@ -26,6 +27,9 @@ LOG = getLogger(__name__)
 
 admins = list(Config.admins)
 prefix = ["/","!","#","-","?"]
+db_uri = Config.db_url
+
+Db = MongoPy(db_uri)
 
 app = Client("Pyro-Base",
         api_id=Config.api_id,
