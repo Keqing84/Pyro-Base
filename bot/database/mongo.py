@@ -31,7 +31,7 @@ class MongoPy:
     def ping(self):
         try:
             self.mdb.command('ping')
-            retrun True
+            return True
         except Exception as e:
             LOG.info(str(e))
             return False
