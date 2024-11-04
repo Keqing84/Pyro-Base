@@ -18,10 +18,10 @@ _id || Auto Generate By Mongo, So Set The Tg Id In It
 """
 
 class MongoPy:
-    def __init__(self, uri, bot="KAI84"):
+    def __init__(self, uri, bot="KAI84", coll="bot"):
         self.client = pymongo.mongo_client.MongoClient(uri)
         self.mdb = self.client[bot]
-        self.coll = self.mdb[bot]
+        self.coll = self.mdb[coll]
         self.connected = self.ping(bot)
         self._ids = list(x["_id"] for x in self.keys())
         self.total_ele = len(self._ids)
