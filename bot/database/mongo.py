@@ -22,7 +22,7 @@ class MongoPy:
         self.client = pymongo.mongo_client.MongoClient(uri)
         self.mdb = self.client[bot]
         self.coll = self.mdb[coll]
-        self.connected = self.ping(bot)
+        self.connected = self.ping()
         self._ids = list(x["_id"] for x in self.keys())
         self.total_ele = len(self._ids)
 
@@ -40,7 +40,7 @@ class MongoPy:
     # Return The Elements Present In The Collection in list -> Dict    
     def keys(self):
         _lis = []
-        for x in mycol.find():
+        for x in self.coll.find():
             _lis.append(x)
         return _lis
 
