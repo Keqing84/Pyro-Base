@@ -1,5 +1,5 @@
 uvloop
-pyrogram
+pyrofork
 Tgcrypto
 python-dotenv
 pymongo
