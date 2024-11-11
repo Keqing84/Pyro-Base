@@ -1,4 +1,5 @@
-from bot import app, LOG
+from bot import app
+from bot.logging import LOG
 import asyncio
 from pyrogram import idle
 
