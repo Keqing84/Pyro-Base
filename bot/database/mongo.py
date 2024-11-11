@@ -1,5 +1,5 @@
-from bot import LOG, db_uri
-
+from bot import db_uri
+from bot.logging import LOG
 import pymongo
 
 """
@@ -23,6 +23,10 @@ class MongoPy:
         self.mdb = self.client[bot]
         self.coll = self.mdb[coll]
         self.connected = self.ping()
+        if not self.connected:
+            LOG.info("Mongo Server Not Connected")
+        else:
+            LOG.info("Mongo Server Connected")
         self._ids = list(x["_id"] for x in self.keys())
         self.total_ele = len(self._ids)
 
