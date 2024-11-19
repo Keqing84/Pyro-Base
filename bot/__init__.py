@@ -9,7 +9,8 @@ admins = list(Config.admins)
 prefix = ["/","!","#","-","?"]
 db_uri = Config.db_url
 
-Db = MongoPy(db_uri)
+Db_bot = MongoPy(db_uri, "pyro-base", "bot")
+Db_user = MongoPy(db_uri, "pyro-base", "user")
 
 app = Client(
     "Pyro-Base",
