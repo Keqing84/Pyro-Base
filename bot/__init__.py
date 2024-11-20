@@ -3,15 +3,16 @@ from pyrogram import Client
 from bot.config import Config
 from bot.database.mongo import MongoPy
 
-uvloop.install() # Pyrogram Speed Up
-
 admins = list(Config.admins)
 prefix = ["/","!","#","-","?"]
 db_uri = Config.db_url
 
+user_load = []
+
 Db_bot = MongoPy(db_uri, "pyro-base", "bot")
 Db_user = MongoPy(db_uri, "pyro-base", "user")
 
+uvloop.install() # Pyrogram Speed Up
 app = Client(
     "Pyro-Base",
     api_id=Config.api_id,
@@ -19,4 +20,4 @@ app = Client(
     bot_token=Config.bot_token,
     workdir="bot",
     plugins={'root': 'bot.plugins'}
-    )
+)
