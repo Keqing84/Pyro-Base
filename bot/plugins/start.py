@@ -8,7 +8,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 @app.on_message(filters.private & filters.incoming & filters.command("start", prefix))
 async def start_py(_, msg: Message):
-    cmds = msg.commands
+    cmds = msg.command
     if len(cmds) != 2:
         return await msg.reply_photo(img["start"], caption=start_text.format(msg.from_user.mention(style="md")), reply_markup=start_mark)
     else:
