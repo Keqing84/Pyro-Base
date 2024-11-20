@@ -6,6 +6,7 @@ from bot.database.mongo import MongoPy
 admins = list(Config.admins)
 prefix = ["/","!","#","-","?"]
 db_uri = Config.db_url
+bot_username = False
 
 user_load = []
 
